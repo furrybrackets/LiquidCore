@@ -1,6 +1,7 @@
 import pathNode from "path";
 import Routes from "./routes.js";
 import fs from "fs-extra";
+import GetComponents from './parse.js';
 
 export function registerDirectoryJIT(directory, config) {
   return new JITInstance(directory, config);
@@ -14,9 +15,10 @@ class JITInstance {
     this.tasks = [];
     // compiled HTML routes
     this.routes = new Routes();
-    this.pageList = pathNode.join(directory, "pages");
-    this.components = pathNode.join(directory, "components");
-    this.templates = pathNode.join(directory, "templates");
+    // list of paths to files to be compiled
+    this.pageDir = pathNode.join(directory, "pages");
+    this.componentsDir = pathNode.join(directory, "components");
+    this.templatesDir = pathNode.join(directory, "templates");
     this.config = config;
 
     // pageList is an array of all pages in the directory.
@@ -27,7 +29,28 @@ class JITInstance {
     //   - templates: an array of templates used in the page
     //   - html: the most recent compiled HTML
 
-    this.pages = {};
+    this.PageContext = [];
+
+    // componentList is an array of all components in the directory.
+
+    this.components = [];
+    this.templates = [];
+    this.pages = [];
+
+    // get all pages, components, templates in the directory pages/ using fs-extra.
+
+    fs.readdirSync(this.pageDir).forEach(page => {
+        this.pageList.push(page);
+    });
+
+    fs.readdirSync(this.componentsDir).forEach(component => {
+        this.componentList.push(component);
+    });
+
+    fs.readdirSync(this.templatesDir).forEach(template => {
+        this.templateList.push(template);
+    });
+
   };
 
   addTask(task) {
