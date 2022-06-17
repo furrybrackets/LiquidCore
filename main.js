@@ -1,7 +1,7 @@
 import pathNode from "path";
 import Routes from "./routes.js";
 import fs from "fs-extra";
-import GetComponents from './parse.js';
+// import GetComponents from './parse.js';
 import RegComponent from "./components/register.js";
 import Comp from "./components/proto.js";
 
