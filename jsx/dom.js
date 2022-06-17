@@ -37,7 +37,18 @@ export class HTMLElement {
     }
 };
 
-export function LiquidJSX(tag, details) {
+export function jsx(tag, details) {
+    let detail = details || {};
+    let children = detail.children || [];
+    delete detail.children;
+    // check if children is an array
+    if (!Array.isArray(children)) {
+        children = [children];
+    };
+    return new HTMLElement(tag, new Props(detail), children).render();
+};
+
+export function jsxs(tag, details) {
     let detail = details || {};
     let children = detail.children || [];
     delete detail.children;

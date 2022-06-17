@@ -11,5 +11,7 @@
     "@babel/core": "^7.18.5",
     "fs-extra": "^10.1.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@babel/plugin-transform-react-jsx": "^7.17.12"
+  }
 }
