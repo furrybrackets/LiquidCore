@@ -1,6 +1,6 @@
 {
   "name": "@liquidmd/core",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Core functionality for Liquid Markdown.",
   "main": "main.js",
   "repository": "https://github.com/furrybrackets/LiquidCore.git",
@@ -9,10 +9,10 @@
   "type": "module",
   "dependencies": {
     "@babel/core": "^7.18.5",
+    "@babel/plugin-transform-react-jsx": "^7.17.12",
     "fs-extra": "^10.1.0"
   },
   "devDependencies": {
-    "@babel/plugin-transform-react-jsx": "^7.17.12",
     "@liquidmd/jsx-runtime": "^1.0.0"
   }
 }
