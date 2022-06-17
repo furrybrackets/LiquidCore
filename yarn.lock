@@ -253,6 +253,11 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
+"@liquidmd/jsx-runtime@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@liquidmd/jsx-runtime/-/jsx-runtime-1.0.0.tgz#5da1eddd34e55e3f83c86f7aff1d7cf6cfc46457"
+  integrity sha512-pmLLwjbfgkoydnJ7Dan9MiNqfY89pE2DU6izl/wZ2hMzaz+XKqtlVRky84QLet9cjzuYfg55B8UQJCZQ3TpGLA==
+
 ansi-styles@^3.2.1:
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/ansi-styles/-/ansi-styles-3.2.1.tgz#41fbb20243e50b12be0f04b8dedbf07520ce841d"

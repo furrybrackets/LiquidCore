@@ -12,6 +12,7 @@
     "fs-extra": "^10.1.0"
   },
   "devDependencies": {
-    "@babel/plugin-transform-react-jsx": "^7.17.12"
+    "@babel/plugin-transform-react-jsx": "^7.17.12",
+    "@liquidmd/jsx-runtime": "^1.0.0"
   }
 }

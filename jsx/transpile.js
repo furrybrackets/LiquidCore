@@ -1,12 +1,12 @@
-import { transformSync } from '@babel/core';
-import fs from 'fs-extra';
+import { transformSync } from "@babel/core";
 
-const file = fs.readFileSync('./test.js', 'utf8');
-
-console.log(transformSync(file, {
-    plugins: [['@babel/plugin-transform-react-jsx', {
-        runtime: 'automatic',
-        importSource: '@liquidmd'
-    }]],
-    filename: 'test.js',
-}).code);
+export default function TranspileJSX(code) {
+    return transformSync(code, {
+        plugins: [
+            ["@babel/plugin-transform-react-jsx", {
+                runtime: 'automatic',
+                importSource: '@liquidmd'
+            }],
+        ]
+    }).code;
+}

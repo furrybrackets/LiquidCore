@@ -4,6 +4,7 @@ import fs from "fs-extra";
 // import GetComponents from './parse.js';
 import RegComponent from "./components/register.js";
 import Comp from "./components/proto.js";
+import TranspileJSX from "./jsx/transpile.js";
 
 export const RegisterComponent = RegComponent;
 export const Component = Comp;
@@ -55,6 +56,19 @@ class JITInstance {
     fs.readdirSync(this.templatesDir).forEach(template => {
         this.templateList.push(template);
     });
+
+    // check if jsx is enabled in the config.
+    // if it is, transpile the JSX code using TranspileJSX.
+
+    if (config.jsx == true) {
+        // iterate through all components and transpile them.
+        this.componentList.forEach(component => {
+            let componentPath = pathNode.join(this.componentsDir, component);
+            let componentFile = fs.readFileSync(componentPath, "utf8");
+            let transpiled = TranspileJSX(componentFile);
+            fs.writeFileSync(componentPath, transpiled);  
+        })
+    };
 
   };
 
