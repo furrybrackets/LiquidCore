@@ -44,6 +44,9 @@ class JITInstance {
     this.pages = [];
 
     // get all pages, components, templates in the directory pages/ using fs-extra.
+    this.componentList = [];
+    this.templateList = [];
+    this.pageList = [];
 
     fs.readdirSync(this.pageDir).forEach(page => {
         this.pageList.push(page);
