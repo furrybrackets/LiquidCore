@@ -2,10 +2,15 @@ import pathNode from "path";
 import Routes from "./routes.js";
 import fs from "fs-extra";
 import GetComponents from './parse.js';
+import RegComponent from "./components/register.js";
+import Comp from "./components/proto.js";
 
-export function registerDirectoryJIT(directory, config) {
+export const RegisterComponent = RegComponent;
+export const Component = Comp;
+
+export function RegisterJIT(directory, config) {
   return new JITInstance(directory, config);
-}
+};
 
 class JITInstance {
   constructor(directory, config) {
@@ -77,3 +82,4 @@ class JITInstance {
     return this.routes;
   };
 }
+
